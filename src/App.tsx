@@ -20,21 +20,22 @@ export const App: React.FC = () => {
   };
 
   return (
-  <div className="App">
-    <h1>Dynamic list of Goods</h1>
+    <div className="App">
+      <h1>Dynamic list of Goods</h1>
 
-    <button type="button" data-cy="all-button" onClick={loadAllGoods}>
-      Load all goods
-    </button>
+      <button type="button" data-cy="all-button" onClick={loadAllGoods}>
+        Load all goods
+      </button>
 
-    <button type="button" data-cy="first-five-button" onClick={load5Goods}>
-      Load 5 first goods
-    </button>
+      <button type="button" data-cy="first-five-button" onClick={load5Goods}>
+        Load 5 first goods
+      </button>
 
-    <button type="button" data-cy="red-button" onClick={loadRedGoods}>
-      Load red goods
-    </button>
+      <button type="button" data-cy="red-button" onClick={loadRedGoods}>
+        Load red goods
+      </button>
 
-    <GoodsList goods={goods} />
-  </div>
-)};
+      <GoodsList goods={goods} />
+    </div>
+  );
+};
