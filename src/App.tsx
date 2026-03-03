@@ -7,17 +7,32 @@ import { Good } from './types/Good';
 export const App: React.FC = () => {
   const [goods, setGoods] = React.useState<Good[]>([]);
 
-  const loadAllGoods = () => {
-    goodsAPI.getAll().then(setGoods);
-  };
+  const loadAllGoods = React.useCallback(() => {
+    goodsAPI
+      .getAll()
+      .then(setGoods)
+      .catch(() => {
+        return 'Failed to load goods';
+      });
+  }, []);
 
-  const load5Goods = () => {
-    goodsAPI.get5First().then(setGoods);
-  };
+  const load5Goods = React.useCallback(() => {
+    goodsAPI
+      .get5First()
+      .then(setGoods)
+      .catch(() => {
+        return 'Failed to load 5 first goods';
+      });
+  }, []);
 
-  const loadRedGoods = () => {
-    goodsAPI.getRedGoods().then(setGoods);
-  };
+  const loadRedGoods = React.useCallback(() => {
+    goodsAPI
+      .getRedGoods()
+      .then(setGoods)
+      .catch(() => {
+        return 'Failed to load red goods';
+      });
+  }, []);
 
   return (
     <div className="App">
