@@ -12,7 +12,7 @@ export const App: React.FC = () => {
       .getAll()
       .then(setGoods)
       .catch(() => {
-        return 'Failed to load goods';
+        alert('Failed to load goods');
       });
   }, []);
 
@@ -21,7 +21,7 @@ export const App: React.FC = () => {
       .get5First()
       .then(setGoods)
       .catch(() => {
-        return 'Failed to load 5 first goods';
+        alert('Failed to load 5 first goods');
       });
   }, []);
 
@@ -30,7 +30,7 @@ export const App: React.FC = () => {
       .getRedGoods()
       .then(setGoods)
       .catch(() => {
-        return 'Failed to load red goods';
+        alert('Failed to load red goods');
       });
   }, []);
 
